@@ -40,4 +40,9 @@
   template:
     src: supervisord.conf.j2
     dest: /etc/supervisord.conf
-  notify: restart supervisord
+
+- name: restart supervisord
+  service:
+    name: supervisord
+    state: restarted
+    enabled: true
